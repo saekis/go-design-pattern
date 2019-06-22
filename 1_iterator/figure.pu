@@ -1,0 +1,28 @@
+@startuml
+
+class Entity {
+}
+
+class ImplementAggregate {
+}
+
+class Implementlterator {
+}
+
+interface Aggregate {
+  Iterator()
+}
+
+interface Iterator {
+  HasNext()
+  Next()
+}
+
+Aggregate -right-> Iterator : Creates
+ImplementAggregate o-down- Entity
+Implementlterator o-left- ImplementAggregate
+
+Aggregate <|.down. ImplementAggregate
+Iterator <|.down. Implementlterator
+
+@enduml

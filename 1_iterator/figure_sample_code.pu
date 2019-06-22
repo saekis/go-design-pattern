@@ -1,0 +1,42 @@
+@startuml
+
+class Book {
+    string name
+    string GetName()
+}
+
+class Bookshelf {
+    []Book books
+    int last
+    int maxsize
+    Bookshelf NewBookshelf()
+    Book GetByIndex()
+    void AppendBook()
+    int GetLength()
+    Iterator Iterator()
+}
+
+class Bookshelfiterator {
+    Bookshelf bookshelf
+    int index
+    bool HasNext()
+    Product Next()
+}
+
+interface Aggregate {
+    Iterator Iterator()
+}
+
+interface Iterator {
+  bool HasNext()
+  Next()
+}
+
+Aggregate -right-> Iterator : Creates
+Bookshelf o-- Book
+Bookshelfiterator o-left- Bookshelf
+
+Aggregate <|.. Bookshelf
+Iterator <|.. Bookshelfiterator
+
+@enduml
