@@ -3,7 +3,7 @@ package bookshelf
 import "testing"
 
 func Test_AppendBook(t *testing.T) {
-	bs := NewBookShelf(1)
+	bs := NewBookShelf()
 	bs.AppendBook(&DummyProduct2{})
 	if actual := bs.last; actual != 1 {
 		t.Errorf("got %v\nwant %v", actual, 1)

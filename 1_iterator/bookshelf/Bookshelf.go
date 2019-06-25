@@ -5,8 +5,8 @@ type bookshelf struct {
 	last  int
 }
 
-func NewBookShelf(maxsize int) *bookshelf {
-	return &bookshelf{books: make([]Product, maxsize), last: 0}
+func NewBookShelf() *bookshelf {
+	return &bookshelf{books: []Product{}, last: 0}
 }
 
 func (bs *bookshelf) GetByIndex(index int) Product {
@@ -14,7 +14,7 @@ func (bs *bookshelf) GetByIndex(index int) Product {
 }
 
 func (bs *bookshelf) AppendBook(b Product) {
-	bs.books[bs.last] = b
+	bs.books = append(bs.books, b)
 	bs.last++
 }
 

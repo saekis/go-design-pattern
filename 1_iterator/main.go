@@ -7,7 +7,7 @@ import (
 )
 
 func main() {
-	bs := bookshelf.NewBookShelf(3)
+	bs := bookshelf.NewBookShelf()
 	bs.AppendBook(bookshelf.NewBook("リーダブルコード"))
 	bs.AppendBook(bookshelf.NewBook("達人プログラマ"))
 	bs.AppendBook(bookshelf.NewBook("Team Geek"))
