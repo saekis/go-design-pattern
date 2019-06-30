@@ -1,0 +1,26 @@
+@startuml
+
+class Main {
+}
+
+interface Adapter {
+    string GetWeak()
+    string GetStrong()
+}
+
+class BannerAdapter {
+    banner Banner
+    string GetWeak()
+    string GetStrong()
+}
+
+class Banner {
+    string WithParen()
+    string WithAster()
+}
+
+Main -down-> Adapter : Uses
+BannerAdapter o-right- Banner
+Adapter <|.right. BannerAdapter
+
+@enduml

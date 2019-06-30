@@ -1,0 +1,19 @@
+@startuml
+
+class Main {
+}
+
+interface AdapterInterface {
+}
+
+class BannerAdapter {
+}
+
+class Adaptee {
+}
+
+Main -down-> AdapterInterface : Uses
+BannerAdapter o-right- Adaptee
+AdapterInterface <|.right. BannerAdapter
+
+@enduml
