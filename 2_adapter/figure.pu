@@ -1,19 +1,28 @@
 @startuml
 
-class Main {
+class Entity {
 }
 
-interface AdapterInterface {
+class ImplementAggregate {
 }
 
-class BannerAdapter {
+class Implementlterator {
 }
 
-class Adaptee {
+interface Aggregate {
+  Iterator()
 }
 
-Main -down-> AdapterInterface : Uses
-BannerAdapter o-right- Adaptee
-AdapterInterface <|.right. BannerAdapter
+interface Iterator {
+  HasNext()
+  Next()
+}
+
+Aggregate -right-> Iterator : Creates
+ImplementAggregate o-down- Entity
+Implementlterator o-left- ImplementAggregate
+
+Aggregate <|.down. ImplementAggregate
+Iterator <|.down. Implementlterator
 
 @enduml
