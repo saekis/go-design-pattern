@@ -1,0 +1,28 @@
+@startuml
+
+abstract class AbstractPrinter {
+    string Display()
+}
+
+interface Printer {
+    string Open()
+    string Print()
+    string Close()
+}
+
+class CharDisplay {
+    string Open()
+    string Print()
+    string Close()
+}
+
+class StringDisplay {
+    string Open()
+    string Print()
+    string Close()
+}
+
+Printer <|.. CharDisplay
+Printer <|.. StringDisplay
+
+@enduml
