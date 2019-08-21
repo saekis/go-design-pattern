@@ -1,0 +1,36 @@
+@startuml
+
+class Client {
+}
+
+interface Builder {
+    MakeTitle()
+    MakeString()
+    MakeItems()
+    Close()
+    GetResult()
+}
+
+interface Director {
+    Build()
+}
+
+class ConcreteBuilder {
+    MakeTitle()
+    MakeString()
+    MakeItems()
+    Close()
+    GetResult()
+}
+
+class ConcreteDirector {
+    Build()
+}
+
+Builder <|-- ConcreteBuilder
+Director <|-- ConcreteDirector
+Director o-right- Builder
+Client-right->ConcreteDirector : Uses
+Client-right->ConcreteBuilder : Uses
+
+@enduml
