@@ -11,13 +11,13 @@ import (
 func main() {
 	// Build text
 	b := builder.NewTextBuilder()
-	d := director.NewDirector(b)
+	d := director.NewDocumentDirector(b)
 	result := d.Build()
 	fmt.Println(result)
 
 	// Build html
 	b = builder.NewHtmlBuilder()
-	d = director.NewDirector(b)
+	d = director.NewDocumentDirector(b)
 	result = d.Build()
 	fmt.Println(result)
 }

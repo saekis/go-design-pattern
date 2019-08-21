@@ -4,7 +4,11 @@ class Client {
 }
 
 interface Builder {
-    BuildDetail()
+    MakeTitle()
+    MakeString()
+    MakeItems()
+    Close()
+    GetResult()
 }
 
 interface Director {
@@ -12,18 +16,21 @@ interface Director {
 }
 
 class ConcreteBuilder {
-    BuildDetail()
+    MakeTitle()
+    MakeString()
+    MakeItems()
+    Close()
+    GetResult()
 }
 
 class ConcreteDirector {
     Build()
 }
 
-Builder <|-down- ConcreteBuilder
-Director <|-down- ConcreteDirector
+Builder <|-- ConcreteBuilder
+Director <|-- ConcreteDirector
 Director o-right- Builder
 Client-right->ConcreteDirector : Uses
 Client-right->ConcreteBuilder : Uses
-ConcreteDirector o-right- ConcreteBuilder
 
 @enduml
